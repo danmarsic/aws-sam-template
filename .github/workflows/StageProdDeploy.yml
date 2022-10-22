@@ -5,12 +5,12 @@ on:
     types: [published]
 
 jobs:
-  test-and-lint:
-    uses:  danmarsic/aws-sam-template/.github/workflows/LintAndTest.yml@main
+  #test-and-lint:
+  #  uses:  danmarsic/aws-sam-template/.github/workflows/LintAndTest.yml@main
   deploy-stage:
     runs-on: ubuntu-latest
     environment: stage
-    needs: [test-and-lint]
+    #needs: [test-and-lint]
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/deploy
